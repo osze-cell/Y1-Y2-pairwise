@@ -1,7 +1,7 @@
 function create_tv_array(json_object) {
     // Separate items by age group
-    let old_items = json_object.filter(t => t.age === 'old');
-    let young_items = json_object.filter(t => t.age === 'young');
+    let old_items = json_object.filter(t => t.gender === 'female');
+    let young_items = json_object.filter(t => t.age === 'male');
 
     // Group each age by statement_number -> { true: item, false: item }
     let old_groups = groupByStatement(old_items);
