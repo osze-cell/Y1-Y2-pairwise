@@ -1,4 +1,4 @@
-// pairwise file
+// pairwise Y1Y2 file
         const jsPsych = initJsPsych({
             show_progress_bar: true,
             on_finish: function(data) {
