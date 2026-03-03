@@ -1,7 +1,7 @@
 function create_tv_array(json_object) {
     // Separate items by age group
     let old_items = json_object.filter(t => t.gender === 'female');
-    let young_items = json_object.filter(t => t.age === 'male');
+    let young_items = json_object.filter(t => t.gender === 'male');
 
     // Group each age by statement_number -> { true: item, false: item }
     let old_groups = groupByStatement(old_items);
@@ -35,22 +35,22 @@ function create_tv_array(json_object) {
         let second_item = old_first ? young_item : old_item;
 
         tv_array.push({
-            stimulus_1: first_item.stimulus,
-            stimulus_2: second_item.stimulus,
+            stimulus_1: first_item.filename,
+            stimulus_2: second_item.filename,
             data: {
                 // First audio info
                 first_age: first_item.age,
                 first_statement_number: first_item.statement_number,
                 first_statement: first_item.statement,
                 first_truth: first_item.truth,
-                first_stimulus: first_item.stimulus,
+                first_stimulus: first_item.filename,
                 first_gender: first_item.gender,
                 // Second audio info
                 second_age: second_item.age,
                 second_statement_number: second_item.statement_number,
                 second_statement: second_item.statement,
                 second_truth: second_item.truth,
-                second_stimulus: second_item.stimulus,
+                second_stimulus: second_item.filename,
                 second_gender: second_item.gender,
                 // Presentation order
                 old_first: old_first
