@@ -2,8 +2,7 @@
         const jsPsych = initJsPsych({
             show_progress_bar: true,
             on_finish: function(data) {
-            jsPsych.data.displayData('csv'); // For debugging: shows all collected data in the console
-            //window.location.href = 'finish.html';
+            window.location.href = 'finish.html';
             }
         });
 
